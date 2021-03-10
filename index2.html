@@ -13,11 +13,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
+    <script src="./js/check_pass.js"></script>
+    <script src="./js/check_length.js"></script>
+
 
 
 
 </head>
-<body>
+<body onload="registerHandlers(); length()">
 <div class="w3-top">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">
         <a href="index.html" class="w3-bar-item w3-button"><img style="margin-left:-17px; height:50px;" src="./img/logo.jpg" alt="logo"><b>STA</b> Snow Station</a>
@@ -49,25 +52,33 @@
 
 <div id="main1">
     <h1 style="text-align: center">Register Now</h1>
-    <form method="post">
+    <form method="post"  id="myForm">
         <div class="col-xs-65 col-sm-90 col-md-90 col-lg-90 text-left">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-6">
+
                     <div class="form-group">
                         <label for="user_name">User Name:</label>
-                        <input id="user_name" name="name" class="form-control" type="text"
+                        <input id="user_name" name="your-name" class="form-control" type="text"
                                placeholder="Enter User Name" required="required"/>
+                        <span id="error-name" style="color: red"></span>
                     </div>
+
                     <div class="form-group">
                         <label for="password">Password:</label>
                         <input id="password" name="password" class="form-control" type="password"
-                               placeholder="Enter Password" value="" required="required"/>
+                               placeholder="Enter Password" value="" required="required" />
+                        <span id="passErr" style="color: red"></span>
+
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" >
                         <label for="repeat_password">Repeat Password:</label>
                         <input id="repeat_password" name="repeat password" class="form-control" type="password"
                                placeholder="Repeat Password" value="" required="required"/>
+                        <span id="verPassErr" class="help-block hide">The two passwords you entered are not the same.
+            Please re-enter both now.</span>
                     </div>
+
 
                     <div class="form-group">
                         <label for="first_name">First Name:</label>
@@ -132,7 +143,7 @@
                     <div class="form-group">
                         <label for="city">City:</label>
                         <input id="city" name="city" class="form-control" type="text"
-                               placeholder="Enter City" />
+                               placeholder="Enter City" required="required" />
                     </div>
                     <div class="form-group">
                     <label for="state">State:</label>
@@ -166,7 +177,7 @@
                                placeholder="Enter Email" required="required"/>
                     </div>
 
-                    <input type="submit" class="btn btn-success" value="Submit Button"/>
+                    <input type="submit" class="btn btn-success" value="Submit Button" id="submitButton"/>
                     <input type="reset" class="btn btn-info" value="Reset Button"/>
                 </div>
             </div>
