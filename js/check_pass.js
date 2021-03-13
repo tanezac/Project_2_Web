@@ -21,11 +21,13 @@ function chkPasswords() {
                 +"Contain at least 1 lowercase character (a-z) \n"
                 +"Contain at least 1 uppercase character (A-Z) \n"
                 +"Contain at least 1 special character")
-
+            document.getElementById("password").style.color="red";
             return false;
         }
+        else {
+            document.getElementById("password").style.color="black";
+        }
     }
-
 }
 
 function Reenter(){
@@ -49,9 +51,11 @@ function Reenter(){
                 +"Contain at least 1 lowercase character (a-z) \n"
                 +"Contain at least 1 uppercase character (A-Z) \n"
                 +"Contain at least 1 special character")
-
+            //check_match();
+            document.getElementById("repeat_password").style.color="red";
         }
         else {
+            //document.getElementById("repeat_password").style.color="black";
             check_match();
         }
     }
@@ -63,10 +67,13 @@ function check_match(){
     var check = document.forms["myForm"]["password"].value;
  if(second != check)
     {
-        alert("Password does not match")
-
+        alert("Password does not match!")
+        document.getElementById("repeat_password").style.color="red";
         return false;
     }
+ else {
+     document.getElementById("repeat_password").style.color="black";
+ }
 }
 
 
