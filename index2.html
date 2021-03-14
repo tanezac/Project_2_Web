@@ -168,7 +168,8 @@
                     <div class="form-group">
                         <label for="zip">Zip Code:</label>
                         <input id="zip" name="zip" class="form-control" type="text"
-                               placeholder="Enter Zip Code" required="required" oninput="format_zipcode()"/>
+                               placeholder="Enter Zip Code" required="required" oninput="format_zipcode()"
+                               onkeypress="return onlyNumber(event)"/>
                         <span id="zipErr" style="color: red"></span>
                     </div>
 
@@ -176,7 +177,8 @@
                         <label for="phone">Phone Number:</label>
                         <input id="phone" name="phone" class="form-control" type="tel"
                                placeholder="Enter Phone Number" required="required"
-                                onkeydown="phoneNumberFormatter()"/>
+                               onkeydown="phoneNumberFormatter()"
+                               onkeypress="return onlyNumber(event)"/>
                         <span id="phoneErr" style="color: red"></span>
                     </div>
 
@@ -184,6 +186,7 @@
                         <label for="email">Email:</label>
                         <input id="email" name="email" class="form-control" type="email"
                                placeholder="Enter Email" required="required"/>
+                        <span id="emailErr" style="color: red"></span>
                     </div>
 
                     <input type="submit" class="btn btn-success" value="Submit Button" id="submitButton"/>
