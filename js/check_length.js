@@ -91,7 +91,7 @@ function format_zipcode(){
     var zipcode = document.getElementById("zip");
     zipcode.value = zipcode.value.replace("-","");
     if(zipcode.value.length >5) {
-        zipcode.value = zipcode.value.substring(0, 5) + "-" + zipcode.value.substring(5,10);
+        zipcode.value = zipcode.value.substring(0, 5) + "-" + zipcode.value.substring(5,9);
     }
     else {
         return true;
@@ -137,7 +137,7 @@ function formatPhoneNumber(value) {
     if (phoneNumberLength < 7) {
         return `${phoneNumber.slice(0, 3)}-${phoneNumber.slice(3)}`;
     }
-    return `${phoneNumber.slice(0, 3)}-${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6,12)}`;
+    return `${phoneNumber.slice(0, 3)}-${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6,10)}`;
 }
 
 function IsEmail(email) {
