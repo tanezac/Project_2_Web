@@ -4,19 +4,20 @@ function checkLength(){
 
     if(user_name.length > 50){
         document.getElementById('error-name').innerHTML="User name's length is too long - exceed the maximum of 50 characters";
-
+        document.getElementById("user_name").style.borderColor = "red";
         //alert("User name is too long - exceed the maximum of 50 characters");
         //return false
     }
     else if(user_name.length<6 && user_name.length>0){
         document.getElementById('error-name').innerHTML="User name's length is too short - below the 6 character minimum";
-
+        document.getElementById("user_name").style.borderColor = "red";
         //alert("User name is too short - below the 6 character minimum");
         //return false
     }
     else if(user_name.length <= 50 && user_name.length >= 6){
         document.getElementById('error-name').innerHTML=" ";
         //document.getElementById("user_name").style.borderColor = " ";
+        document.getElementById("user_name").style.borderColor= "green";
     }
 }
 
@@ -27,16 +28,21 @@ function check_name() {
     if(first_name && last_name) {
         if (first_name.value.length > 50) {
             document.getElementById("firstname").innerHTML = "First name's length is too long - exceed the maximum of 50 characters";
+            document.getElementById("first_name_name").style.borderColor = "red";
         }
-        else {
+        else if(first_name.value.length >0 && first_name.value.length <=50) {
             document.getElementById("firstname").innerHTML = " ";
+            document.getElementById("first_name").style.borderColor= "green";
         }
 
         if (last_name.value.length > 50) {
             document.getElementById("lastname").innerHTML = "Last name's length is too long - exceed the maximum of 50 characters";
+            document.getElementById("last_name").style.borderColor = "red";
         }
-        else {
+        else if(last_name.value.length >0 && last_name.value.length<=50) {
             document.getElementById("lastname").innerHTML = " ";
+            document.getElementById("last_name").style.borderColor= "green";
+
         }
     }
 
@@ -48,16 +54,20 @@ function check_address(){
     if(address1 && address2){
         if (address1.value.length > 100) {
             document.getElementById("address_1").innerHTML = "The address name's length is too long - exceed the maximum of 100 characters";
+            document.getElementById("address1").style.borderColor = "red";
         }
-        else {
+        else if(address1.value.length>0 && address1.value.length<=100) {
             document.getElementById("address_1").innerHTML = " ";
+            document.getElementById("address1").style.borderColor= "green";
         }
 
         if (address2.value.length > 100) {
             document.getElementById("address_2").innerHTML = "The address name's length is too long - exceed the maximum of 100 characters";
+            document.getElementById("address2").style.borderColor = "red";
         }
-        else {
+        else if(address2.value.length>0 && address2.value.length<=100) {
             document.getElementById("address_2").innerHTML = " ";
+            document.getElementById("address2").style.borderColor= "green";
         }
     }
 }
@@ -65,10 +75,11 @@ function check_city(){
     var city = document.getElementById("city");
     if(city.value.length > 50){
         document.getElementById("cityErr").innerHTML = "The city name's length is too long - exceed the maximum of 50 characters";
-
+        document.getElementById("city").style.borderColor = "red";
     }
-    else {
+    else if(city.value.length >0 && city.value.length <=50) {
         document.getElementById("cityErr").innerHTML = " ";
+        document.getElementById("city").style.borderColor= "green";
 
     }
 }
@@ -78,12 +89,15 @@ function check_zipcode(){
     if(zipcode.value.length > 10)
     {
         document.getElementById("zipErr").innerHTML = "The zip code's length is too long - exceed the maximum of 10 characters";
+        document.getElementById("zip").style.borderColor = "red";
     }
     else if(zipcode.value.length <5 && zipcode.value.length>0 ){
         document.getElementById("zipErr").innerHTML = "The zip code's length is too short - below the 6 character minimum";
+        document.getElementById("zip").style.borderColor = "red";
     }
     else if(zipcode.value.length <=10 && zipcode.value.length >=5) {
         document.getElementById("zipErr").innerHTML = " ";
+        document.getElementById("zip").style.borderColor= "green";
     }
 
 }
@@ -103,9 +117,11 @@ function check_phone(){
     var phone = document.getElementById("phone");
     if(phone.value.length >12) {
         document.getElementById("phoneErr").innerHTML = "The phone number's length is too long - exceed the maximum of 12 characters";
+        document.getElementById("phone").style.borderColor = "red";
     }
     else {
         document.getElementById("phoneErr").innerHTML=" ";
+        document.getElementById("phone").style.borderColor= "green";
     }
 
 }
@@ -148,9 +164,11 @@ function check_email(){
     var email = document.getElementById("email");
     if(!IsEmail(email.value)){
         document.getElementById("emailErr").innerHTML="Wrong format - x@x.xx format!";
+        document.getElementById("email").style.borderColor = "red";
     }
     else {
         document.getElementById("emailErr").innerHTML = " ";
+        document.getElementById("email").style.borderColor= "green";
     }
 }
 

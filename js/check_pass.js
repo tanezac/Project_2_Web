@@ -22,10 +22,12 @@ function chkPasswords() {
                 +"Contain at least 1 uppercase character (A-Z) \n"
                 +"Contain at least 1 special character")
             document.getElementById("password").style.color="red";
+            document.getElementById("password").style.borderColor= "red";
             return false;
         }
         else {
             document.getElementById("password").style.color="black";
+            document.getElementById("password").style.borderColor= "green";
         }
     }
 }
@@ -53,6 +55,7 @@ function Reenter(){
                 +"Contain at least 1 special character")
             //check_match();
             document.getElementById("repeat_password").style.color="red";
+            document.getElementById("repeat_password").style.borderColor= "red";
         }
         else {
             //document.getElementById("repeat_password").style.color="black";
@@ -69,10 +72,12 @@ function check_match(){
     {
         alert("Password does not match!")
         document.getElementById("repeat_password").style.color="red";
+        document.getElementById("repeat_password").style.borderColor= "red";
         return false;
     }
  else {
      document.getElementById("repeat_password").style.color="black";
+     document.getElementById("repeat_password").style.borderColor= "green";
  }
 }
 
