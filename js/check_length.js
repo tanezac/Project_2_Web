@@ -91,7 +91,7 @@ function format_zipcode(){
     var zipcode = document.getElementById("zip");
     zipcode.value = zipcode.value.replace("-","");
     if(zipcode.value.length >5) {
-        zipcode.value = zipcode.value.substring(0, 5) + "-" + zipcode.value.substring(5,9);
+        zipcode.value = zipcode.value.substring(0, 5) + "-" + zipcode.value.substring(5,10);
     }
     else {
         return true;
