@@ -104,26 +104,26 @@
                         <label>Gender:</label><br>
                         <input type="radio"
                                name="gender" id="maleGender"
-                               value="male" />
+                               value="male" required="required"/>
                         <label for="maleGender">Male</label>
                         <input type="radio"
                                name="gender" id="femaleGender"
-                               value="female" />
+                               value="female" required="required"/>
                         <label for="femaleGender">Female</label>
                         <input type="radio"
                                name="gender" id="otherGender"
-                               value="other" />
+                               value="other" required="required"/>
                         <label for="otherGender">Other</label>
                     </div>
                     <div class="form-group">
                         <label>Marital Status:</label><br>
                         <input type="radio"
                                name="status" id="yes"
-                               value="yes" />
+                               value="yes" required="required"/>
                         <label for="yes">Yes</label>
                         <input type="radio"
                                name="status" id="no"
-                               value="no" />
+                               value="no" required="required"/>
                         <label for="no">No</label>
 
                     </div>
@@ -153,7 +153,7 @@
                     </div>
                     <div class="form-group">
                     <label for="state">State:</label>
-                    <select id="state" name="state" class="form-control">
+                    <select id="state" name="state" class="form-control" required="required">
                         <option value="" selected="selected" hidden="hidden" disabled="disabled">
                             --Please Select--
                         </option>
@@ -168,13 +168,16 @@
                     <div class="form-group">
                         <label for="zip">Zip Code:</label>
                         <input id="zip" name="zip" class="form-control" type="text"
-                               placeholder="Enter Zip Code" required="required"/>
+                               placeholder="Enter Zip Code" required="required" oninput="format_zipcode()"/>
+                        <span id="zipErr" style="color: red"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="phone">Phone Number:</label>
                         <input id="phone" name="phone" class="form-control" type="tel"
-                               placeholder="Enter Phone Number" />
+                               placeholder="Enter Phone Number" required="required"
+                                onkeydown="phoneNumberFormatter()"/>
+                        <span id="phoneErr" style="color: red"></span>
                     </div>
 
                     <div class="form-group">
