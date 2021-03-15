@@ -5,3 +5,11 @@
 .green {
     outline: 1px solid green;
 }
+.tick {
+    background: url(/img/check_mark.jpg) no-repeat;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin: 5px 20px;
+    display: none;
+}
